@@ -6,7 +6,7 @@ $servername = "localhost";
 $username = "root";
 $password="";
 $dbname="nuovo";
-
+$ID=1;
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
@@ -14,7 +14,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "INSERT INTO dbasl (NOME, COGNOME, EMAIL) VALUES ($Nome, $Cognome, $Email)";
+$sql = "INSERT INTO dbasl (NOME, COGNOME, EMAIL) VALUES ($ID,$Nome, $Cognome, $Email)";
 
 if (mysqli_query($conn, $sql)) {
     echo "New record created successfully";

@@ -34,7 +34,7 @@ $username = "root";
 $password="";
 $dbname="nuovo";
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password,$dbname);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -45,9 +45,10 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        echo "<br> ID: ". $row["ID"]. " - NOME: ". $row["NOME"]. "-COGNOME " . $row["COGNOME"] ."E-MAIL" . $row["E-MAIL"] . "<br>";
+        echo "ID: " . $row["ID"]. ", NOME: " . $row["NOME"]. ", COGNOME: " . $row["COGNOME"]. ", EMAIL: " . $row["EMAIL"] . "<br>";
     }
-} else {
+}
+else {
     echo "0 results";
 }
 
