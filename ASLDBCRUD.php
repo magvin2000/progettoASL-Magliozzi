@@ -55,7 +55,7 @@ if ($result->num_rows > 0) {
         echo('<tr>');
         echo('<td>');
         echo($row["ID"]);
-        echo ('<input type = "hidden" name = "Id">');
+        echo ('<input type = "hidden" name = "Id" value = "' . $row.'">');
         echo('</td>');
         echo('<td>');
         echo($row["NOME"]);
@@ -70,7 +70,7 @@ if ($result->num_rows > 0) {
         echo ('<input type ="submit" value ="Aggiorna">');
         echo('</td>');
         echo('<td>');
-        echo ('<form action ="button_elimina" method=""get">');
+        echo ('<form action ="button_elimina" method="get">');
         echo ('<input type ="submit" value ="Elimina">');
         echo ('</form>');
         echo('</td>');
