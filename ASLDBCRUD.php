@@ -13,15 +13,9 @@
     <a href="#myPopup" data-rel="popup" class="btn btn-primary">Aggiungi</a>
 
     <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;"> -->
-        <form method="get" action="button_invia.php">
-            <div>
-                <h2>Inserisci i dati</h2>
-                <input type="text" name="nome" placeholder="Nome" required>
-                <input type="text" name="cognome" placeholder="Cognome" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="submit" value="Aggiungi">
-            </div>
 
+        <form method="get" action="button_invia.php">
+            <input type="submit" value="Aggiungi">
     <!-- </div>
 </div> -->
 <table width="100" border="1">
