@@ -7,6 +7,7 @@ $servername = "localhost";
 $username = "root";
 $password="";
 $dbname="nuovo";
+$id = $_POST['Id'];
 
 $conn = new mysqli_connect($servername, $username, $password, $dbname);
 
@@ -14,7 +15,7 @@ if (!$conn) {
     die("Connessione non stabilita: " . mysqli_connect_error());
 }
 
-// aggiorna
+$sql = "UPDATE dbasl SET NOME=$Nome WHERE id=$id";
 
 if ($conn->query($sql) === TRUE) {
     echo "Riga aggiornata";
