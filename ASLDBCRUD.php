@@ -9,10 +9,10 @@
     <title>DATABASE</title>
 </head>
 <body>
-<div data-role="main" class="ui-content">
+<!--<div data-role="main" class="ui-content">
     <a href="#myPopup" data-rel="popup" class="btn btn-primary">Aggiungi</a>
 
-    <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
+    <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;"> -->
         <form method="get" action="button_invia.php">
             <div>
                 <h2>Inserisci i dati</h2>
@@ -22,8 +22,8 @@
                 <input type="submit" value="Aggiungi">
             </div>
         </form>
-    </div>
-</div>
+    <!--</div>
+</div> -->
 </body>
 </html>
 
@@ -34,7 +34,7 @@ $username = "root";
 $password="";
 $dbname="nuovo";
 
-$conn = new mysqli($servername, $username, $password,$dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -45,7 +45,6 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        echo "ID: " . $row["ID"]. ", NOME: " . $row["NOME"]. ", COGNOME: " . $row["COGNOME"]. ", EMAIL: " . $row["EMAIL"] . "<br>";
     }
 }
 else {
