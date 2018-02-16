@@ -15,7 +15,7 @@ if (!$conn) {
     die("Connessione non stabilita: " . mysqli_connect_error());
 }
 
-$sql = "UPDATE dbasl SET NOME=$Nome WHERE id=$id";
+$sql = "UPDATE dbasl SET NOME=$Nome Set COGNOME=$Cognome SET EMAIL=$Email WHERE id=$id";
 
 if ($conn->query($sql) === TRUE) {
     echo "Riga aggiornata";
