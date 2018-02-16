@@ -15,7 +15,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "DELETE FROM dbasl WHERE  = some_value";
+$sql = "DELETE FROM dbasl WHERE  = ";
 
     if ($conn->query($sql) === TRUE) {
     echo "Record deleted successfully";

@@ -69,7 +69,9 @@ if ($result->num_rows > 0) {
         echo ('<input type ="submit" value ="Aggiorna">');
         echo('</td>');
         echo('<td>');
+        echo ('<form action ="button_elimina" method=""get">');
         echo ('<input type ="submit" value ="Elimina">');
+        echo ('</form>');
         echo('</td>');
         echo('</tr>');
     }
