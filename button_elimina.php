@@ -6,18 +6,10 @@ $password="";
 $dbname="nuovo";
 $id = $_POST['Id'];
 
-$conn = new mysqli_connect($servername, $username, $password, $dbname);
-
-if (!$conn) {
-    die("Connessione non stabilita: " . mysqli_connect_error());
-}
+$conn =  mysqli_connect($servername, $username, $password, $dbname);
 
 $sql = "DELETE FROM dbasl WHERE ID = $id";
 
-    if ($conn->query($sql) === TRUE) {
-    echo "Riga eliminata";
-} else {
-    echo "Errore nell'eliminazione: " . $conn->error;
-}
-
+mysqli_query($conn, $sql);
+header("location:http://localhost/progettoASL-MagliozziCassin/ASLDBCRUD.php");
 $conn->close();

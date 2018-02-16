@@ -16,9 +16,9 @@
         <form method="get" action="button_invia.php">
             <div>
                 <h2>Inserisci i dati</h2>
-                <input type="text" name="nome" placeholder="Nome">
-                <input type="text" name="cognome" placeholder="Cognome">
-                <input type="email" name="email" placeholder="Email">
+                <input type="text" name="nome" placeholder="Nome " required>
+                <input type="text" name="cognome" placeholder="Cognome" required>
+                <input type="email" name="email" placeholder="Email" required>
                 <input type="submit" value="Aggiungi">
             </div>
 
@@ -44,10 +44,6 @@ $dbname="nuovo";
 
 $conn = new mysqli($servername, $username, $password,$dbname);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
 $sql = "SELECT ID, NOME, COGNOME, EMAIL FROM dbasl";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
@@ -55,7 +51,7 @@ if ($result->num_rows > 0) {
         echo('<tr>');
         echo('<td>');
         echo($row["ID"]);
-        echo ('<input type = "hidden" name = "Id" value = "' . $row.'">');
+        echo ('<input type = "hidden" name = "Id" value = "$ID">');
         echo('</td>');
         echo('<td>');
         echo($row["NOME"]);
@@ -77,8 +73,6 @@ if ($result->num_rows > 0) {
         echo('</tr>');
     }
 }
-else {
-    echo "0 results";
-}
+
 echo ('</table>');
 $conn->close();
