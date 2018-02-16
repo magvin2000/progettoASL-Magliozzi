@@ -16,7 +16,7 @@
         <form method="get" action="button_invia.php">
             <div>
                 <h2>Inserisci i dati</h2>
-                <input type="text" name="nome" placeholder="Nome " required>
+                <input type="text" name="nome" placeholder="Nome" required>
                 <input type="text" name="cognome" placeholder="Cognome" required>
                 <input type="email" name="email" placeholder="Email" required>
                 <input type="submit" value="Aggiungi">
@@ -63,12 +63,12 @@ if ($result->num_rows > 0) {
         echo($row["EMAIL"]);
         echo ('</td>');
         echo('<td>');
-        echo ('<form action ="button_aggiorna" method="get">');
+        echo ('<form action ="button_aggiorna.php" method="get">');
         echo ('<input type ="submit" value ="Aggiorna">');
         echo('</form>');
         echo('</td>');
         echo('<td>');
-        echo ('<form action ="button_elimina" method="get">');
+        echo ('<form action ="button_elimina.php" method="get">');
         echo ('<input type ="submit" value ="Elimina">');
         echo ('</form>');
         echo('</td>');
