@@ -11,15 +11,15 @@ $dbname="nuovo";
 $conn = new mysqli_connect($servername, $username, $password, $dbname);
 
 if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+    die("Connessione non stabilita: " . mysqli_connect_error());
 }
 
 // aggiorna
 
 if ($conn->query($sql) === TRUE) {
-    echo "Record deleted successfully";
+    echo "Riga aggiornata";
 } else {
-    echo "Error deleting record: " . $conn->error;
+    echo "Errore nell'aggiornamento: " . $conn->error;
 }
 
 $conn->close();

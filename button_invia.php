@@ -9,7 +9,7 @@ $dbname="nuovo";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+    die("Connessione non stabilita: " . mysqli_connect_error());
 }
 $sql = "INSERT INTO dbasl (NOME, COGNOME, EMAIL) VALUES ('$Nome', '$Cognome', '$Email')";
 

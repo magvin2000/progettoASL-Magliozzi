@@ -4,19 +4,20 @@ $servername = "localhost";
 $username = "root";
 $password="";
 $dbname="nuovo";
+$id = $_POST['Id'];
 
 $conn = new mysqli_connect($servername, $username, $password, $dbname);
 
 if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+    die("Connessione non stabilita: " . mysqli_connect_error());
 }
 
-$sql = "DELETE FROM dbasl WHERE  = ";
+$sql = "DELETE FROM dbasl WHERE ID = $id";
 
     if ($conn->query($sql) === TRUE) {
-    echo "Record deleted successfully";
+    echo "Riga eliminata";
 } else {
-    echo "Error deleting record: " . $conn->error;
+    echo "Errore nell'eliminazione: " . $conn->error;
 }
 
 $conn->close();

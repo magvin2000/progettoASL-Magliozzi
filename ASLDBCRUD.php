@@ -55,6 +55,7 @@ if ($result->num_rows > 0) {
         echo('<tr>');
         echo('<td>');
         echo($row["ID"]);
+        echo ('<input type = "hidden" name = "Id">');
         echo('</td>');
         echo('<td>');
         echo($row["NOME"]);
