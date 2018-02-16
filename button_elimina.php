@@ -1,17 +1,23 @@
-
 <?php
 
 $servername = "localhost";
 $username = "root";
 $password="";
 $dbname="nuovo";
-include("ASLDBCRUD.php");
-$id = $_GET['id'];
-$conn =  mysqli_connect($servername, $username, $password, $dbname);
 
-$sql = "DELETE FROM dbasl WHERE ID = $id";
+$id = $_GET['Id'];
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-mysqli_query($conn, $sql);
-header("location:http://localhost/progettoASL-MagliozziCassin/ASLDBCRUD.php");
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "DELETE FROM dbasl WHERE ID=$id";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Record deleted successfully";
+} else {
+    echo "Error deleting record: " . $conn->error;
+}
 
 $conn->close();

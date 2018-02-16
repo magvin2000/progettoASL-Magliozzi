@@ -9,15 +9,9 @@
     <title>DATABASE</title>
 </head>
 <body>
-<!-- <div data-role="main" class="ui-content">
-    <a href="#myPopup" data-rel="popup" class="btn btn-primary">Aggiungi</a>
-
-    <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;"> -->
-
-        <form method="get" action="button_invia.php">
-            <input type="submit" value="Aggiungi">
-    <!-- </div>
-</div> -->
+    <form method="get" action="button_invia.php">
+        <input type="submit" value="Aggiungi">
+    </form>
 <table width="100" border="1">
     <tr>
         <th>ID</th>
@@ -25,7 +19,7 @@
         <th>COGNOME</th>
         <th>E-MAIL</th>
     </tr>
-        </form>
+
 </body>
 </html>
 
@@ -42,10 +36,10 @@ $sql = "SELECT ID, NOME, COGNOME, EMAIL FROM dbasl";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
+        $ID=$row["ID"];
         echo('<tr>');
         echo('<td>');
         echo($row["ID"]);
-        echo ('<input type = "hidden" name = "Id" value = $ID>');
         echo('</td>');
         echo('<td>');
         echo($row["NOME"]);
@@ -58,11 +52,13 @@ if ($result->num_rows > 0) {
         echo ('</td>');
         echo('<td>');
         echo ('<form action ="button_aggiorna.php" method="get">');
+        echo ('<input type = "hidden" name = "Id" value = "$ID">');
         echo ('<input type ="submit" value ="Aggiorna">');
         echo('</form>');
         echo('</td>');
         echo('<td>');
         echo ('<form action ="button_elimina.php" method="get">');
+        echo ('<input type = "hidden" name = "Id" value = "$ID">');
         echo ('<input type ="submit" value ="Elimina">');
         echo ('</form>');
         echo('</td>');

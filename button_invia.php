@@ -15,7 +15,7 @@
     <input type="text" name="cognome" placeholder="Cognome" required>
     <input type="email" name="email" placeholder="Email" required>
         <br>
-        <input type  >
+        <input type="submit" value="Aggiungi" name="aggiungi">
     </form>
 </div>
 </body>
@@ -28,9 +28,19 @@ $username = "root";
 $password="";
 $dbname="nuovo";
 
-include_once ("ASLDBCRUD.php");
-$conn =  mysqli_connect($servername, $username, $password, $dbname);
-$sql = "INSERT INTO dbasl (NOME, COGNOME, EMAIL) VALUES ('$Nome', '$Cognome', '$Email')";
-$conn->query($sql);
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "INSERT INTO dbasl (NOME,COGNOME, EMAIL) VALUES ('$Nome', '$Cognome', '$Email')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
 $conn->close();
-header("location:http://localhost/progettoASL-MagliozziCassin/ASLDBCRUD.php");
