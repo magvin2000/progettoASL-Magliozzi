@@ -9,10 +9,10 @@
     <title>DATABASE</title>
 </head>
 <body>
-<div data-role="main" class="ui-content">
+<!-- <div data-role="main" class="ui-content">
     <a href="#myPopup" data-rel="popup" class="btn btn-primary">Aggiungi</a>
 
-    <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
+    <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;"> -->
         <form method="get" action="button_invia.php">
             <div>
                 <h2>Inserisci i dati</h2>
@@ -21,9 +21,9 @@
                 <input type="email" name="email" placeholder="Email">
                 <input type="submit" value="Aggiungi">
             </div>
-        </form>
-    </div>
-</div>
+
+    <!-- </div>
+</div> -->
 <table width="100" border="1">
     <tr>
         <th>ID</th>
@@ -31,10 +31,7 @@
         <th>COGNOME</th>
         <th>E-MAIL</th>
     </tr>
-
-
-
-</table>
+        </form>
 </body>
 </html>
 
@@ -56,21 +53,23 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo('<tr>');
-        echo ($row["ID"]);
-        echo ($row["NOME"]);
-        echo ($row["COGNOME"]);
-        echo ($row["EMAIL"]);
-        echo ('</tr>');
-        echo ('</th>');
-        echo ('<th>');
-        echo ("COGNOME");
-        echo ('</th>');
-        echo ('<th>');
-        echo ('</tr>');
+        echo('<td>');
+        echo($row["ID"]);
+        echo('</td>');
+        echo('<td>');
+        echo($row["NOME"]);
+        echo('</td>');
+        echo('<td>');
+        echo($row["COGNOME"]);
+        echo('</td>');
+        echo('<td>');
+        echo($row["EMAIL"]);
+        echo ('</td>');
+        echo('</tr>');
     }
 }
 else {
     echo "0 results";
 }
-
+echo ('</table>');
 $conn->close();
