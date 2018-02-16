@@ -20,27 +20,30 @@
 </div>
 </body>
 <?php
-$Nome=$_GET['nome'];
-$Cognome=$_GET['cognome'];
-$Email=$_GET['email'];
-$servername = "localhost";
-$username = "root";
-$password="";
-$dbname="nuovo";
+
+if (isset($_GET['nome']) && isset($_GET['cognome']) && isset($_GET['email'])) {
+    $Nome = $_GET['nome'];
+    $Cognome = $_GET['cognome'];
+    $Email = $_GET['email'];
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "nuovo";
 
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "INSERT INTO dbasl (NOME,COGNOME, EMAIL) VALUES ('$Nome', '$Cognome', '$Email')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    $conn->close();
 }
-
-$sql = "INSERT INTO dbasl (NOME,COGNOME, EMAIL) VALUES ('$Nome', '$Cognome', '$Email')";
-
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
-$conn->close();

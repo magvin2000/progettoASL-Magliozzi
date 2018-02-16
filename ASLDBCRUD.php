@@ -17,7 +17,7 @@
         <th>ID</th>
         <th>NOME</th>
         <th>COGNOME</th>
-        <th>E-MAIL</th>
+        <th>EMAIL</th>
     </tr>
 
 </body>
