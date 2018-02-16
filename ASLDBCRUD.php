@@ -24,6 +24,17 @@
         </form>
     </div>
 </div>
+<table width="100" border="1">
+    <tr>
+        <th>ID</th>
+        <th>NOME</th>
+        <th>COGNOME</th>
+        <th>E-MAIL</th>
+    </tr>
+
+
+
+</table>
 </body>
 </html>
 
@@ -42,10 +53,20 @@ if ($conn->connect_error) {
 
 $sql = "SELECT ID, NOME, COGNOME, EMAIL FROM dbasl";
 $result = $conn->query($sql);
-
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
-        echo "ID: " . $row["ID"]. ", NOME: " . $row["NOME"]. ", COGNOME: " . $row["COGNOME"]. ", EMAIL: " . $row["EMAIL"] . "<br>";
+        echo('<tr>');
+        echo ($row["ID"]);
+        echo ($row["NOME"]);
+        echo ($row["COGNOME"]);
+        echo ($row["EMAIL"]);
+        echo ('</tr>');
+        echo ('</th>');
+        echo ('<th>');
+        echo ("COGNOME");
+        echo ('</th>');
+        echo ('<th>');
+        echo ('</tr>');
     }
 }
 else {
