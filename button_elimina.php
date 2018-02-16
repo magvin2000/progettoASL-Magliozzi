@@ -12,7 +12,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "DELETE FROM dbasl WHERE ID=$id";
+$sql = "DELETE FROM dbasl WHERE ID='$id'";
 
 if ($conn->query($sql) === TRUE) {
     echo "Record deleted successfully";
@@ -21,3 +21,4 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
+header("location:http://localhost:63342/progettoASL-MagliozziCassin/ASLDBCRUD.php?_ijt=p3j51hss07g2l97so5nkccigov");
