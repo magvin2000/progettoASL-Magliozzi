@@ -65,6 +65,12 @@ if ($result->num_rows > 0) {
         echo('<td>');
         echo($row["EMAIL"]);
         echo ('</td>');
+        echo('<td>');
+        echo ('<input type ="submit" value ="Aggiorna">');
+        echo('</td>');
+        echo('<td>');
+        echo ('<input type ="submit" value ="Elimina">');
+        echo('</td>');
         echo('</tr>');
     }
 }

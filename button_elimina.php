@@ -8,14 +8,14 @@ $username = "root";
 $password="";
 $dbname="nuovo";
 $ID=1;
-// Create connection
+
 $conn = new mysqli_connect($servername, $username, $password, $dbname);
-// Check connection
+
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$sql = "DELETE FROM dbasl WHERE some_column = some_value";
+$sql = "DELETE FROM dbasl WHERE  = some_value";
 
     if ($conn->query($sql) === TRUE) {
     echo "Record deleted successfully";
@@ -24,4 +24,3 @@ $sql = "DELETE FROM dbasl WHERE some_column = some_value";
 }
 
 $conn->close();
-?>
