@@ -74,5 +74,3 @@ if ($result->num_rows > 0) {
 echo ('</table>');
 $conn->close();
 ?>
-</body>
-</html>

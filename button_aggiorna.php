@@ -30,20 +30,19 @@ echo ("<form action='' method='get'>");
 echo ("<input type='text' name='nome' placeholder='Nome' value='$Nome' required>");
 echo ("<input type='text' name='cognome' placeholder='Cognome' value='$Cognome' required>");
 echo ("<input type='email' name='email' placeholder='Email' value='$Email' required>");
+echo ("<input type ='hidden' name ='Id' value ='$id'>");
 echo ('<br>');
-echo ("<input type='submit' value='Aggiungi' name='aggiungi'>");
-echo ("</form>");
-echo ("</body>");
 
-$sql = "UPDATE dbasl SET NOME=$Nome SET COGNOME=$Cognome SET EMAIL=$Email WHERE ID=$id";
+$sql = "UPDATE dbasl SET NOME='$Nome', COGNOME='$Cognome', EMAIL='$Email' WHERE ID='$id'";
 
 if ($conn->query($sql) === TRUE) {
     echo "Riga aggiornata";
 } else {
     echo "Errore nell'aggiornamento: " . $conn->error;
 }
-header("location: location:http://localhost/progettoASL-MagliozziCassin/ASLDBCRUD.php");
+
+echo ("<input type='submit' value='Aggiungi' name='aggiungi'>");
+echo ("</form>");
+echo ("</body>");
+
 $conn->close();
-?>
-</body>
-</html>
