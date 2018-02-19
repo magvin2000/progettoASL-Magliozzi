@@ -52,7 +52,7 @@ if ($result->num_rows > 0) {
         echo ('</td>');
         echo('<td>');
         echo ('<form action ="button_aggiorna.php" method="get">');
-        echo ("<input type = 'hidden' name = 'nome' value = '$nome'>");
+        echo ("<input type = 'hidden' name = 'nome' value = '$nome' >");
         echo ("<input type = 'hidden' name = 'cognome' value = '$cognome'>");
         echo ("<input type = 'hidden' name = 'email' value = '$email'>");
         echo ("<input type = 'hidden' name = 'Id' value = '$ID'>");

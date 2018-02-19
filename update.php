@@ -1,7 +1,7 @@
 <?php
-$Nome = $_GET['nome'];
-$Cognome = $_GET['cognome'];
-$Email = $_GET['email'];
+$Nome = htmlentities($_GET['nome']);
+$Cognome = htmlentities($_GET['cognome']);
+$Email = htmlentities($_GET['email']);
 $servername = "localhost";
 $username = "root";
 $password = "";
