@@ -35,15 +35,11 @@ echo ('<br>');
 
 $sql = "UPDATE dbasl SET NOME='$Nome', COGNOME='$Cognome', EMAIL='$Email' WHERE ID='$id'";
 
-if ($conn->query($sql) === TRUE) {
-    echo "Riga aggiornata";
-} else {
-    echo "Errore nell'aggiornamento: " . $conn->error;
-}
-
-echo ("<input type='submit' value='Aggiungi' name='aggiungi'>");
+$conn->query($sql);
+echo ("<input type='submit' value='Aggiorna' name='Aggiorna' class='update_button'>");
 echo ("</form>");
-echo ("</body>");
+
 
 $conn->close();
 ?>
+</body>

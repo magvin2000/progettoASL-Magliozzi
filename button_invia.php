@@ -15,7 +15,7 @@
     <input type="text" name="cognome" placeholder="Cognome" required>
     <input type="email" name="email" placeholder="Email" required>
         <br>
-        <input type="submit" value="Aggiungi" name="aggiungi">
+        <input type="submit" value="Aggiungi" name="aggiungi" class="update_button">
     </form>
 </div>
 
@@ -39,14 +39,13 @@ if (isset($_GET['nome']) && isset($_GET['cognome']) && isset($_GET['email'])) {
     }
 
     $sql = "INSERT INTO dbasl (NOME,COGNOME, EMAIL) VALUES ('$Nome', '$Cognome', '$Email')";
-
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-
+    header("location:http://localhost/progettoASL-MagliozziCassin/ASLDBCRUD.php");
     $conn->close();
-    header("http://localhost:63342/progettoASL-MagliozziCassin/ASLDBCRUD.php?_ijt=tqrbp7c83joce9dmadbkk1j76q");
 }
-?>
+    ?>
+</body>
