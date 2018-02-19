@@ -8,17 +8,9 @@
     <title>DATABASE</title>
 </head>
 <body>
-<div>
-    <form action="" method="get">
         <h2>Modifica i dati</h2>
-        <input type="text" name="nome" placeholder="Nome" value="" required>
-        <input type="text" name="cognome" placeholder="Cognome" value="" required>
-        <input type="email" name="email" placeholder="Email" value="" required>
-        <br>
-        <input type="submit" value="Aggiungi" name="aggiungi">
-    </form>
-</div>
 </body>
+</html>
 
 <?php
 
@@ -44,5 +36,14 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Errore nell'aggiornamento: " . $conn->error;
 }
+
+    echo ("<form action='' method='get'>");
+        echo ("<input type='text' name='nome' placeholder='Nome' value='$Nome' required>");
+        echo ("<input type='text' name='cognome' placeholder='Cognome' value='$Cognome' required>");
+        echo ("<input type='email' name='email' placeholder='Email' value='$Email' required>");
+        echo ('<br>');
+        echo ("<input type='submit' value='Aggiungi' name='aggiungi'>");
+    echo ("</form>");
+echo ("</body>");
 
 $conn->close();
