@@ -20,8 +20,6 @@
         <th>EMAIL</th>
     </tr>
 
-
-
 <?php
 
 $servername = "localhost";
@@ -58,13 +56,13 @@ if ($result->num_rows > 0) {
         echo ("<input type = 'hidden' name = 'cognome' value = '$cognome'>");
         echo ("<input type = 'hidden' name = 'email' value = '$email'>");
         echo ("<input type = 'hidden' name = 'Id' value = '$ID'>");
-        echo ('<input type ="submit" value ="Aggiorna"class="update_button">');
+        echo ('<input type ="submit" value ="Aggiorna">');
         echo('</form>');
         echo('</td>');
         echo('<td>');
         echo ('<form action ="button_elimina.php" method="get">');
         echo ("<input type = 'hidden' name = 'Id' value = '$ID'>");
-        echo ('<input type ="submit" value ="Elimina"class="update_button">');
+        echo ('<input type ="submit" value ="Elimina">');
         echo ('</form>');
         echo('</td>');
         echo('</tr>');

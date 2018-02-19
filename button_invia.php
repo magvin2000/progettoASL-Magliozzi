@@ -18,7 +18,7 @@
         <input type="submit" value="Aggiungi" name="aggiungi">
     </form>
 </div>
-</body>
+
 
 <?php
 
@@ -49,3 +49,4 @@ if (isset($_GET['nome']) && isset($_GET['cognome']) && isset($_GET['email'])) {
     $conn->close();
     header("http://localhost:63342/progettoASL-MagliozziCassin/ASLDBCRUD.php?_ijt=tqrbp7c83joce9dmadbkk1j76q");
 }
+?>

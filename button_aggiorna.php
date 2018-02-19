@@ -46,3 +46,4 @@ echo ("</form>");
 echo ("</body>");
 
 $conn->close();
+?>
