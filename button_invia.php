@@ -19,6 +19,7 @@
     </form>
 </div>
 </body>
+
 <?php
 
 if (isset($_GET['nome']) && isset($_GET['cognome']) && isset($_GET['email'])) {
