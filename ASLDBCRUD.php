@@ -37,6 +37,9 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         $ID=$row["ID"];
+        $nome = $row["NOME"];
+        $cognome = $row["COGNOME"];
+        $email = $row["EMAIL"];
         echo('<tr>');
         echo('<td>');
         echo($row["ID"]);
@@ -52,7 +55,10 @@ if ($result->num_rows > 0) {
         echo ('</td>');
         echo('<td>');
         echo ('<form action ="button_aggiorna.php" method="get">');
-        echo ("<input type = 'hidden' name = 'Id' value = '$ID''>");
+        echo ("<input type = 'hidden' name = 'nome' value = '$nome'>");
+        echo ("<input type = 'hidden' name = 'cognome' value = '$cognome'>");
+        echo ("<input type = 'hidden' name = 'email' value = '$email'>");
+        echo ("<input type = 'hidden' name = 'Id' value = '$ID'>");
         echo ('<input type ="submit" value ="Aggiorna">');
         echo('</form>');
         echo('</td>');

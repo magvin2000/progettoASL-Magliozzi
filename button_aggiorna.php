@@ -9,9 +9,6 @@
 </head>
 <body>
         <h2>Modifica i dati</h2>
-</body>
-</html>
-
 <?php
 
 $Nome=$_GET['nome'];
@@ -21,13 +18,22 @@ $servername = "localhost";
 $username = "root";
 $password="";
 $dbname="nuovo";
-$id = $_POST['Id'];
+$id = $_GET['Id'];
 
-$conn = new mysqli_connect($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 if (!$conn) {
     die("Connessione non stabilita: " . mysqli_connect_error());
 }
+
+echo ("<form action='' method='get'>");
+echo ("<input type='text' name='nome' placeholder='Nome' value='$Nome' required>");
+echo ("<input type='text' name='cognome' placeholder='Cognome' value='$Cognome' required>");
+echo ("<input type='email' name='email' placeholder='Email' value='$Email' required>");
+echo ('<br>');
+echo ("<input type='submit' value='Aggiungi' name='aggiungi'>");
+echo ("</form>");
+echo ("</body>");
 
 $sql = "UPDATE dbasl SET NOME=$Nome SET COGNOME=$Cognome SET EMAIL=$Email WHERE ID=$id";
 
@@ -36,14 +42,5 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Errore nell'aggiornamento: " . $conn->error;
 }
-
-    echo ("<form action='' method='get'>");
-        echo ("<input type='text' name='nome' placeholder='Nome' value='$Nome' required>");
-        echo ("<input type='text' name='cognome' placeholder='Cognome' value='$Cognome' required>");
-        echo ("<input type='email' name='email' placeholder='Email' value='$Email' required>");
-        echo ('<br>');
-        echo ("<input type='submit' value='Aggiungi' name='aggiungi'>");
-    echo ("</form>");
-echo ("</body>");
 
 $conn->close();
