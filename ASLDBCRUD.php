@@ -9,7 +9,7 @@
     <title>DATABASE</title>
 </head>
 <body>
-    <form method="get" action="button_invia.php">
+    <form method="get" action="button_invia.php" class="update_button">
         <input type="submit" value="Aggiungi">
     </form>
 <table width="100" border="1">
@@ -20,8 +20,7 @@
         <th>EMAIL</th>
     </tr>
 
-</body>
-</html>
+
 
 <?php
 
@@ -59,13 +58,13 @@ if ($result->num_rows > 0) {
         echo ("<input type = 'hidden' name = 'cognome' value = '$cognome'>");
         echo ("<input type = 'hidden' name = 'email' value = '$email'>");
         echo ("<input type = 'hidden' name = 'Id' value = '$ID'>");
-        echo ('<input type ="submit" value ="Aggiorna">');
+        echo ('<input type ="submit" value ="Aggiorna"class="update_button">');
         echo('</form>');
         echo('</td>');
         echo('<td>');
         echo ('<form action ="button_elimina.php" method="get">');
         echo ("<input type = 'hidden' name = 'Id' value = '$ID'>");
-        echo ('<input type ="submit" value ="Elimina">');
+        echo ('<input type ="submit" value ="Elimina"class="update_button">');
         echo ('</form>');
         echo('</td>');
         echo('</tr>');
@@ -74,3 +73,6 @@ if ($result->num_rows > 0) {
 
 echo ('</table>');
 $conn->close();
+?>
+</body>
+</html>

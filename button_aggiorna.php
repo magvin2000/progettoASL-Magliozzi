@@ -42,5 +42,8 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Errore nell'aggiornamento: " . $conn->error;
 }
-
+header("location: location:http://localhost/progettoASL-MagliozziCassin/ASLDBCRUD.php");
 $conn->close();
+?>
+</body>
+</html>
