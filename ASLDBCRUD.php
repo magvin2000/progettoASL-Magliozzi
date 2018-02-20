@@ -56,19 +56,21 @@ if ($result->num_rows > 0) {
         echo ("<input type = 'hidden' name = 'cognome' value = '$cognome'>");
         echo ("<input type = 'hidden' name = 'email' value = '$email'>");
         echo ("<input type = 'hidden' name = 'Id' value = '$ID'>");
-        echo ('<input type ="submit" value ="Aggiorna">');
+        echo ('<input type ="submit" value ="aggiorna">');
         echo('</form>');
         echo('</td>');
         echo('<td>');
         echo ('<form action ="button_elimina.php" method="get">');
         echo ("<input type = 'hidden' name = 'Id' value = '$ID'>");
-        echo ('<input type ="submit" value ="Elimina">');
+        echo ('<input type ="submit" value ="elimina">');
         echo ('</form>');
         echo('</td>');
         echo('</tr>');
     }
 }
 
-echo ('</table>');
+
 $conn->close();
 ?>
+</table>
+<input type="text" name="ricerca" placeholder="scrivi qui il nome ricercato" >
