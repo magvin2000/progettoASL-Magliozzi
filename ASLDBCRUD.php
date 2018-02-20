@@ -6,13 +6,14 @@
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="ricerca_nome.js"></script>
     <title>DATABASE</title>
 </head>
 <body>
     <form method="get" action="button_invia.php" class="update_button">
         <input type="submit" value="Aggiungi">
     </form>
-<table width="100" border="1">
+<table width="100" border="1" align="center">
     <tr>
         <th>ID</th>
         <th>NOME</th>
@@ -73,10 +74,6 @@ if ($result->num_rows > 0) {
 $conn->close();
 ?>
 </table>
-    <input type="text" name="ricerca" placeholder="Scrivi qui il nome ricercato" id="ricerca" onkeyup="ricerca();">
-
-<script>
-
-    </script>
+    <input type="text" name="ricerca" placeholder="Scrivi qui il nome ricercato" id="ricerca" onkeyup="ricerca()">
 </body>
 </html>
