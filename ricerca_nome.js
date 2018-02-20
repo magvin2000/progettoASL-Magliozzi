@@ -5,8 +5,8 @@ function ricerca()
     {
         if (casella[i].innerHTML == document.getElementById("ricerca").value)
         {
-            casella[i].style.backgroundColor = "#ff0000";
-            casella[i].style.color = "#305fff";
+            casella[i].style.backgroundColor = "#000000";
+            casella[i].style.color = "#ffffff";
         }
     }
 }

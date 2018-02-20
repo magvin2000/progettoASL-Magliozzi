@@ -7,6 +7,7 @@
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <title>DATABASE</title>
+    <script type="text/javascript" src="ricerca_nome.js"></script>
 </head>
 <body>
     <form method="get" action="button_invia.php" class="update_button">
@@ -74,9 +75,5 @@ $conn->close();
 ?>
 </table>
     <input type="text" name="ricerca" placeholder="Scrivi qui il nome ricercato" id="ricerca" onkeyup="ricerca();">
-
-<script>
-
-    </script>
 </body>
 </html>
