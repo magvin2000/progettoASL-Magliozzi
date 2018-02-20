@@ -6,14 +6,13 @@
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <script type="text/javascript" src="ricerca_nome.js"></script>
     <title>DATABASE</title>
 </head>
 <body>
     <form method="get" action="button_invia.php" class="update_button">
         <input type="submit" value="Aggiungi">
     </form>
-<table width="100" border="1" align="center">
+<table width="100" border="1">
     <tr>
         <th>ID</th>
         <th>NOME</th>
