@@ -14,12 +14,12 @@
     <form method="get" action="button_invia.php" class="update_button">
         <input type="submit" value="Aggiungi">
     </form>
-<table width="100" border="1">
+<table width="100" border="1" align = "center">
     <tr>
-        <th onkeydown="sorting();">ID</th>
-        <th onkeydown="sorting();">NOME</th>
-        <th onkeydown="sorting();">COGNOME</th>
-        <th onkeydown="sorting();">EMAIL</th>
+        <th onclick="sorting();">ID</th>
+        <th onclick="sorting();">NOME</th>
+        <th onclick="sorting();">COGNOME</th>
+        <th onclick="sorting();">EMAIL</th>
     </tr>
 
 <?php
