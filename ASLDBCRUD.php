@@ -73,19 +73,10 @@ if ($result->num_rows > 0) {
 $conn->close();
 ?>
 </table>
-    <input type="text" name="ricerca" placeholder="Scrivi qui il nome ricercato" id="ricerca" onkeyup="ricerca()">
+    <input type="text" name="ricerca" placeholder="Scrivi qui il nome ricercato" id="ricerca" onkeyup="ricerca();">
 
 <script>
-    function ricerca(){
 
-        var righe = document.getElementsByTagName("tr");
-        for ( var i = 0; i < righe.length; i++ ) {
-            var cerca = righe[i].getElementsByTagName("td");
-
-            if (cerca == document.getElementById(ricerca))
-            {
-                righe[i].style.color = "#ff0000";();
-            }
-        }
-    }
     </script>
+</body>
+</html>
