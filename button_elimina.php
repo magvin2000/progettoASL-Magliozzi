@@ -13,5 +13,5 @@ if ($conn->query($sql) == TRUE) {
 } else {
     echo "Error deleting record: " . $conn->error;
 }
-header('location: http://localhost:63342/progettoASL-MagliozziCassin/ASLDBCRUD.php');
+header("Location: ".$_SERVER['HTTP_REFERER']);
 $conn->close();
