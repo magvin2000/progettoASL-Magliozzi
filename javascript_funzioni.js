@@ -21,7 +21,27 @@ function ricerca()
                 casella[i].style.color = "#000000";
             }
         }
-
-
     }
+}
+
+function select()
+{
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function()
+    {
+        if (this.readyState === 4 && this.status === 200)
+        {
+            var xmlDoc = this.responseXML;
+            var table="<tr><th>ID</th><th>NOME</th><th>COGNOME</th><th>EMAIL</th></tr>";
+            var x = xmlDoc.getElementsByTagName("");
+            for (var i = 0; i < x.length; i++)
+            {
+                "...";
+            }
+            document.getElementById("tabella").innerHTML = table;
+        }
+    };
+    xhttp.open("GET", "select.php", true);
+    xhttp.send();
 }
