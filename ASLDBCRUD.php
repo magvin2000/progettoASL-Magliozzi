@@ -7,7 +7,6 @@
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="ricerca_nome.js"></script>
-    <script type="text/javascript" src="sort.js"></script>
     <script type="text/javascript" src="select_ajax.js"></script>
     <title>DATABASE</title>
 </head>
@@ -23,7 +22,7 @@ $username = "root";
 $password="";
 $dbname="nuovo";
 
-$conn = new mysqli($servername, $username, $password,$dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 $sql = "SELECT ID, NOME, COGNOME, EMAIL FROM dbasl";
 $result = $conn->query($sql);
