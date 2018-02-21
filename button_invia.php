@@ -41,7 +41,7 @@ if (isset($_GET['nome']) && isset($_GET['cognome']) && isset($_GET['email'])) {
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-    header("location:http://localhost/progettoASL-MagliozziCassin/ASLDBCRUD.php");
+    header("Location: ASLDBCRUD.php");
     $conn->close();
 }
     ?>
