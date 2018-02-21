@@ -8,22 +8,16 @@
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="ricerca_nome.js"></script>
     <script type="text/javascript" src="sort.js"></script>
+    <script type="text/javascript" src="select_ajax.js"></script>
     <title>DATABASE</title>
 </head>
-<body>
+<body onload="select();">
     <form method="get" action="button_invia.php" class="update_button">
         <input type="submit" value="Aggiungi">
     </form>
-<table width="100" border="1" align = "center">
-    <tr>
-        <th onclick="sorting();">ID</th>
-        <th onclick="sorting();">NOME</th>
-        <th onclick="sorting();">COGNOME</th>
-        <th onclick="sorting();">EMAIL</th>
-    </tr>
-
+    <table width="100" border="1" align = "center" id="tabella"></table>
 <?php
-
+/*
 $servername = "localhost";
 $username = "root";
 $password="";
@@ -71,9 +65,8 @@ if ($result->num_rows > 0) {
     }
 }
 
-$conn->close();
+$conn->close();*/
 ?>
-</table>
     <input type="text" name="ricerca" placeholder="Cerca nella tabella" id="ricerca" onkeyup="ricerca();">
 </body>
 </html>
