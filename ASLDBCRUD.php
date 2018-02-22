@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="javascript_funzioni.js"></script>
     <title>DATABASE</title>
 </head>
 <body>
 <br>
+<div class="container">
     <form method="get" action="button_invia.php">
         <button class="col-lg-12 btn btn-success" type="submit">
             <span class="glyphicon glyphicon-plus"></span>
@@ -33,7 +35,7 @@ $servername = "localhost";
 $username = "root";
 $password="";
 $dbname="nuovo";
-
+//modifica
 $conn = new mysqli($servername, $username, $password,$dbname);
 
 $sql = "SELECT ID, NOME, COGNOME, EMAIL FROM dbasl";
@@ -88,5 +90,6 @@ $conn->close();
         <span class="input-group-addon" id="search-query"><span class="glyphicon glyphicon-search"></span></span>
         <input type="text" class="form-control" placeholder="Cerca nella tabella" id="ricerca" onkeyup="ricerca();">
     </div>
+</div>
 </body>
 </html>
