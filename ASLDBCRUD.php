@@ -35,7 +35,7 @@ $servername = "localhost";
 $username = "root";
 $password="";
 $dbname="nuovo";
-
+//modifica
 $conn = new mysqli($servername, $username, $password,$dbname);
 
 $sql = "SELECT ID, NOME, COGNOME, EMAIL FROM dbasl";
