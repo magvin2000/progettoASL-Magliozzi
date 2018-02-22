@@ -2,9 +2,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <title>DATABASE</title>
 </head>
 <body>
@@ -41,8 +43,9 @@ if (isset($_GET['nome']) && isset($_GET['cognome']) && isset($_GET['email'])) {
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
-    header("location:http://localhost/progettoASL-MagliozziCassin/ASLDBCRUD.php");
+    header("Location: ASLDBCRUD.php");
     $conn->close();
 }
     ?>
 </body>
+</html>

@@ -18,5 +18,5 @@ $sql = "UPDATE dbasl SET NOME='$Nome', COGNOME='$Cognome', EMAIL='$Email' WHERE 
 
 $conn->query($sql);
 $conn->close();
-header('location: http://localhost/progettoASL-MagliozziCassin/ASLDBCRUD.php');
+header("Location: ASLDBCRUD.php");
 ?>

@@ -3,25 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <link href="css/styles.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <script type="text/javascript" src="javascript_funzioni.js"></script>
     <title>DATABASE</title>
 </head>
-<body onload="select();">
-    <form method="get" action="button_invia.php" class="update_button">
-        <input type="submit" value="Aggiungi">
+<body>
+<br>
+    <form method="get" action="button_invia.php">
+        <button class="col-lg-12 btn btn-success" type="submit">
+            <span class="glyphicon glyphicon-plus"></span>
+                Aggiungi
+        </button>
     </form>
-    <table width="100" border="1" align = "center" id="tabella" >
+    <br> <br> <br>
+    <table align = "center" id="tabella" class="table">
         <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Cognome</th>
-            <th>email</th>
+            <th><center>ID</center></th>
+            <th><center>NOME</center></th>
+            <th><center>COGNOME</center></th>
+            <th><center>EMAIL</center></th>
+            <th><center>AGGIORNA</center></th>
+            <th><center>ELIMINA</center></th>
         </tr>
-
 <?php
 $servername = "localhost";
 $username = "root";
@@ -38,41 +44,49 @@ if ($result->num_rows > 0) {
         $nome = $row["NOME"];
         $cognome = $row["COGNOME"];
         $email = $row["EMAIL"];
-        echo('<tr>');
-        echo('<td>');
-        echo($row["ID"]);
-        echo('</td>');
-        echo('<td>');
-        echo($row["NOME"]);
-        echo('</td>');
-        echo('<td>');
-        echo($row["COGNOME"]);
-        echo('</td>');
-        echo('<td>');
-        echo($row["EMAIL"]);
-        echo ('</td>');
-        echo('<td>');
-        echo ('<form action ="button_aggiorna.php" method="get">');
-        echo ("<input type = 'hidden' name = 'nome' value = '$nome' >");
-        echo ("<input type = 'hidden' name = 'cognome' value = '$cognome'>");
-        echo ("<input type = 'hidden' name = 'email' value = '$email'>");
-        echo ("<input type = 'hidden' name = 'Id' value = '$ID'>");
-        echo ('<input type ="submit" value ="aggiorna">');
-        echo('</form>');
-        echo('</td>');
-        echo('<td>');
-        echo ('<form action ="button_elimina.php" method="get">');
-        echo ("<input type = 'hidden' name = 'Id' value = '$ID'>");
-        echo ('<input type ="submit" value ="elimina">');
-        echo ('</form>');
-        echo('</td>');
-        echo('</tr>');
+        echo ("<tr>
+        <td align = 'center'> " .
+        $row["ID"] .
+        "</td>
+        <td align = 'center'> " .
+        $row["NOME"] .
+        "</td>
+        <td align = 'center'> " .
+        $row["COGNOME"] .
+        "</td>
+        <td align = 'center'> " .
+        $row["EMAIL"] .
+        "</td> 
+        <td align = 'center'>
+        <form action ='button_aggiorna.php' method='get'>
+        <input type = 'hidden' name = 'nome' value = '$nome' >
+        <input type = 'hidden' name = 'cognome' value = '$cognome'> 
+        <input type = 'hidden' name = 'email' value = '$email'>
+        <input type = 'hidden' name = 'Id' value = '$ID'>
+        <button = 'submit' class='btn btn-warning'>
+        <span class = 'glyphicon glyphicon-pencil'></span>
+        Aggiorna
+        </button>
+        </form>
+        </td>
+        <td align = 'center'>
+        <form action ='button_elimina.php' method='get'>
+        <input type = 'hidden' name = 'Id' value = '$ID'>
+        <button type = 'submit' class='btn btn-danger'>
+        <span class = 'glyphicon glyphicon-remove'></span>
+        Elimina
+        </button>
+        </form>
+        </td>
+        </tr> ");
     }
 }
 $conn->close();
 ?>
 </table>
-    <table width="100" border="1" align = "center" id="tabella"></table>
-    <input type="text" name="ricerca" placeholder="Cerca nella tabella" id="ricerca" onkeyup="ricerca();">
+    <div class="input-group">
+        <span class="input-group-addon" id="search-query"><span class="glyphicon glyphicon-search"></span></span>
+        <input type="text" class="form-control" placeholder="Cerca nella tabella" id="ricerca" onkeyup="ricerca();">
+    </div>
 </body>
 </html>
