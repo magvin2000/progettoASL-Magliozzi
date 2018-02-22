@@ -17,7 +17,7 @@
             <input type="text" class="form-control" name="nome" placeholder="Nome" required>
         </div>
         <div class="input-group">
-            <span class="input-group-addon"><span class="glyphicon glyphicon-user-structure"></span></span>
+            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
             <input type="text" class="form-control" name="cognome" placeholder="Cognome" required>
         </div>
         <div class="input-group">
@@ -25,7 +25,7 @@
             <input type="email" class="form-control" name="nome" placeholder="Email" required>
         </div>
         <br>
-        <button value="Aggiungi" name="aggiungi" class="btn btn-success" type="submit">
+        <button value="Aggiungi" name="aggiungi" class="btn btn-success form-control" type="submit">
             <span class="glyphicon glyphicon-send"></span>
             Invia
         </button>
