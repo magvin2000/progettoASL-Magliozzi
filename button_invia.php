@@ -6,18 +6,29 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <title>DATABASE</title>
 </head>
 <body>
 <div>
     <form action="" method="get">
     <h2>Inserisci i dati</h2>
-    <input type="text" name="nome" placeholder="Nome" required>
-    <input type="text" name="cognome" placeholder="Cognome" required>
-    <input type="email" name="email" placeholder="Email" required>
+        <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+            <input type="text" class="form-control" name="nome" placeholder="Nome" required>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-user-structure"></span></span>
+            <input type="text" class="form-control" name="cognome" placeholder="Cognome" required>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+            <input type="email" class="form-control" name="nome" placeholder="Email" required>
+        </div>
         <br>
-        <input type="submit" value="Aggiungi" name="aggiungi" class="update_button">
+        <button value="Aggiungi" name="aggiungi" class="btn btn-success" type="submit">
+            <span class="glyphicon glyphicon-send"></span>
+            Invia
+        </button>
     </form>
 </div>
 

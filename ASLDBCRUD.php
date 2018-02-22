@@ -64,7 +64,7 @@ if ($result->num_rows > 0) {
         <input type = 'hidden' name = 'email' value = '$email'>
         <input type = 'hidden' name = 'Id' value = '$ID'>
         <button = 'submit' class='btn btn-warning'>
-        <span class = 'glyphicon glyphicon-pencil'></span>
+        <span class = 'glyphicon glyphicon-edit'></span>
         Aggiorna
         </button>
         </form>
@@ -73,7 +73,7 @@ if ($result->num_rows > 0) {
         <form action ='button_elimina.php' method='get'>
         <input type = 'hidden' name = 'Id' value = '$ID'>
         <button type = 'submit' class='btn btn-danger'>
-        <span class = 'glyphicon glyphicon-remove'></span>
+        <span class = 'glyphicon glyphicon-trash'></span>
         Elimina
         </button>
         </form>
