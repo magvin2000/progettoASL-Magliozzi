@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+    <!-- script jquery, script bootstrap, script funzioni, style jquery, style bootstrap -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
