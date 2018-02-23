@@ -15,21 +15,21 @@ if ($result->num_rows > 0) {
         $email = $row["EMAIL"];
         echo ("<tr>
         <td align = 'center'> " .
-            $row["ID"] .
-            "</td>
+        $row["ID"] .
+        "</td>
         <td align = 'center'> " .
-            $row["NOME"] .
-            "</td>
+        $row["NOME"] .
+        "</td>
         <td align = 'center'> " .
-            $row["COGNOME"] .
-            "</td>
+        $row["COGNOME"] .
+        "</td>
         <td align = 'center'> " .
-            $row["EMAIL"] .
-            "</td> 
+        $row["EMAIL"] .
+        "</td>
         <td align = 'center'>
-        <form action ='button_aggiorna.php' method='get'>
+        <form action ='' method='get'>
         <input type = 'hidden' name = 'nome' value = '$nome' >
-        <input type = 'hidden' name = 'cognome' value = '$cognome'> 
+        <input type = 'hidden' name = 'cognome' value = '$cognome'>
         <input type = 'hidden' name = 'email' value = '$email'>
         <input type = 'hidden' name = 'Id' value = '$ID'>
         <button type = 'submit' class='btn btn-warning'>
@@ -39,7 +39,7 @@ if ($result->num_rows > 0) {
         </form>
         </td>
         <td align = 'center'>
-        <form action ='button_elimina.php' method='get'>
+        <form action ='' method='get'>
         <input type = 'hidden' name = 'Id' value = '$ID'>
         <button type = 'submit' class='btn btn-danger'>
         <span class = 'glyphicon glyphicon-trash'></span>
@@ -51,5 +51,4 @@ if ($result->num_rows > 0) {
     }
 }
 $conn->close();
-
 ?>
