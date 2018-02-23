@@ -119,16 +119,16 @@ function aggiunta(elemento) {
     xhttp.send();
 }
 
-function aggiornamento(elemento) {
+function aggiornamento() {
     var xhttp = new XMLHttpRequest();
-    var nome=elemento.getElementsByTagName('input')[0].value;
-    var cognome=elemento.getElementsByTagName('input')[1].value;
-    var email=elemento.getElementsByTagName('input')[2].value;
-    var id=elemento.getElementsByTagName('input')[3].value;
+    var nome=document.getElementsByTagName('input')[0].value;
+    var cognome=document.getElementsByTagName('input')[1].value;
+    var email=document.getElementsByTagName('input')[2].value;
+    var id=document.getElementsByTagName('input')[3].value;
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
-            if(this.responseText!=="")  elemento.getElementsByTagName('input')[0].value=this.responseText;
-            else Select(document.getElementById('Tabella'));
+            if(this.responseText!=="")  document.getElementsByTagName('input')[0].value=this.responseText;
+            else selezione();
         }
     };
     xhttp.open("GET", "Update.php?nome=" + nome + "&cognome=" + cognome + "&email=" + email +"&Identificativo="+id, true);
