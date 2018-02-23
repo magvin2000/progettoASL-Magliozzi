@@ -25,6 +25,25 @@ function ricerca()
     }
 }
 
+function ordinamento(tipo)
+{
+    var tmp=new Array();
+    var tmp2=new Array();
+    var righe = document.getElementsByTagName("tr");
+    var colonne = document.getElementsByName(tipo);
+    for(var i=0;i<colonne.length;i++)
+    {
+        tmp[i]=colonne[i].value.toLowerCase() + i.toString();
+        tmp2[i]=righe[i+1].innerHTML;
+    }
+    tmp.sort();
+
+    for(var i=0;i<tmp.length;i++)
+    {
+        righe[i+1].innerHTML=tmp2[tmp[i][tmp[i].length-1]];
+    }
+}
+
 function selezione() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {

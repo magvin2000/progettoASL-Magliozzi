@@ -22,14 +22,6 @@
     </form>
     <br> <br> <br>
     <table align = "center" id="tabella"  class="table" >
-      <!--  <tr>
-            <th><center>ID</center></th>
-            <th><center>NOME</center></th>
-            <th><center>COGNOME</center></th>
-            <th><center>EMAIL</center></th>
-            <th><center>AGGIORNA</center></th>
-            <th><center>ELIMINA</center></th>
-        </tr>-->
 </table>
     <div class="input-group">
         <span class="input-group-addon" id="search-query"><span class="glyphicon glyphicon-search"></span></span>
