@@ -23,10 +23,30 @@
     <br> <br> <br>
     <table align = "center" id="tabella" class="table">
         <tr>
-            <th><center>ID</center></th>
-            <th><center>NOME</center></th>
-            <th><center>COGNOME</center></th>
-            <th><center>EMAIL</center></th>
+            <th onclick="ordinamento('Id');">
+                <center>
+                    <span class="glyphicon glyphicon-chevron-down"></span>
+                    ID
+                </center>
+            </th>
+            <th onclick="ordinamento('nome');">
+                <center>
+                    <span class="glyphicon glyphicon-chevron-down"></span>
+                    NOME
+                </center>
+            </th>
+            <th onclick="ordinamento('cognome');">
+                <center>
+                    <span class="glyphicon glyphicon-chevron-down"></span>
+                    COGNOME
+                </center>
+            </th>
+            <th onclick="ordinamento('email');">
+                <center>
+                    <span class="glyphicon glyphicon-chevron-down"></span>
+                    EMAIL
+                </center>
+            </th>
             <th><center>AGGIORNA</center></th>
             <th><center>ELIMINA</center></th>
         </tr>
@@ -72,7 +92,6 @@ if ($result->num_rows > 0) {
         </td>
         <td align = 'center'>
         <form action ='button_elimina.php' method='get'>
-        <input type = 'hidden' name = 'Id' value = '$ID'>
         <button type = 'submit' class='btn btn-danger'>
         <span class = 'glyphicon glyphicon-trash'></span>
         Elimina
