@@ -64,7 +64,7 @@ if ($result->num_rows > 0) {
         <input type = 'hidden' name = 'cognome' value = '$cognome'> 
         <input type = 'hidden' name = 'email' value = '$email'>
         <input type = 'hidden' name = 'Id' value = '$ID'>
-        <button = 'submit' class='btn btn-warning'>
+        <button type = 'submit' class='btn btn-warning'>
         <span class = 'glyphicon glyphicon-edit'></span>
         Aggiorna
         </button>

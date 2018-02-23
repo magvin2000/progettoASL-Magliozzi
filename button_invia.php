@@ -1,4 +1,4 @@
-<html
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,7 @@
     <title>DATABASE</title>
 </head>
 <body>
-<div>
+<div class="container">
     <form action="" method="get">
     <h2>Inserisci i dati</h2>
         <div class="input-group">
@@ -21,16 +21,15 @@
         </div>
         <div class="input-group">
             <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-            <input type="email" class="form-control" name="nome" placeholder="Email" required>
+            <input type="email" class="form-control" name="email" placeholder="Email" required>
         </div>
         <br>
-        <button value="Aggiungi" name="aggiungi" class="btn btn-success form-control" type="submit">
+        <button type="submit" name="aggiungi" class="btn btn-success form-control">
             <span class="glyphicon glyphicon-send"></span>
             Invia
         </button>
     </form>
 </div>
-
 
 <?php
 
