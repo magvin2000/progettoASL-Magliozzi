@@ -3,8 +3,7 @@ $servername = "localhost";
 $username = "root";
 $password="";
 $dbname="nuovo";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password,$dbname);
 
 $sql = "SELECT ID, NOME, COGNOME, EMAIL FROM dbasl";
 $result = $conn->query($sql);
@@ -14,36 +13,43 @@ if ($result->num_rows > 0) {
         $nome = $row["NOME"];
         $cognome = $row["COGNOME"];
         $email = $row["EMAIL"];
-        echo("<tr>
-        <td>" .
-        $row["ID"] .
-        "</td>
-        <td>" .
-        $row["NOME"] .
-        "</td>
-        <td>" .
-        $row["COGNOME"] .
-        "</td>
-        <td>" .
-        $row["EMAIL"] .
-        "</td>
-        <td>
+        echo ("<tr>
+        <td align = 'center'> " .
+            $row["ID"] .
+            "</td>
+        <td align = 'center'> " .
+            $row["NOME"] .
+            "</td>
+        <td align = 'center'> " .
+            $row["COGNOME"] .
+            "</td>
+        <td align = 'center'> " .
+            $row["EMAIL"] .
+            "</td> 
+        <td align = 'center'>
         <form action ='button_aggiorna.php' method='get'>
         <input type = 'hidden' name = 'nome' value = '$nome' >
-        <input type = 'hidden' name = 'cognome' value = '$cognome'>
+        <input type = 'hidden' name = 'cognome' value = '$cognome'> 
         <input type = 'hidden' name = 'email' value = '$email'>
         <input type = 'hidden' name = 'Id' value = '$ID'>
-        <input type ='submit' value ='aggiorna'>
+        <button type = 'submit' class='btn btn-warning'>
+        <span class = 'glyphicon glyphicon-edit'></span>
+        Aggiorna
+        </button>
         </form>
         </td>
-        <td>
+        <td align = 'center'>
         <form action ='button_elimina.php' method='get'>
         <input type = 'hidden' name = 'Id' value = '$ID'>
-        <input type ='submit' value ='elimina'>
+        <button type = 'submit' class='btn btn-danger'>
+        <span class = 'glyphicon glyphicon-trash'></span>
+        Elimina
+        </button>
         </form>
         </td>
-        </tr>");
+        </tr> ");
     }
 }
-
 $conn->close();
+
+?>
