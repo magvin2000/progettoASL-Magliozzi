@@ -15,7 +15,7 @@
 <br>
 <div class="container">
     <form method="get" action="button_invia.php">
-        <button class="col-lg-12 btn btn-success" type="submit">
+        <button ='submit' class="col-lg-12 btn btn-success" >
             <span class="glyphicon glyphicon-plus"></span>
                 Aggiungi
         </button>
