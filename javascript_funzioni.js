@@ -48,14 +48,35 @@ function selezione() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
-            document.getElementById("tabella").innerHTML ="<tr>"+
-                "<th> ID      </th>" +
-                "<th> NOME    </th>" +
-                "<th> COGNOME </th>" +
-                "<th> EMAIL   </th>" +
-                "<th> Aggiorna</th>" +
-                "<th> Elimina </th>" +
-                "</tr>" +
+            document.getElementById("tabella").innerHTML =
+        "<tr>"+
+            "<th onclick='ordinamento(\"Id\");'>"+
+                "<center>"+
+                    "<span class='glyphicon glyphicon-chevron-down'></span>"+
+                    "ID"+
+                "</center>"+
+            "</th>"+
+            "<th onclick='ordinamento(\"nome\");'>"+
+                "<center>"+
+                    "<span class='glyphicon glyphicon-chevron-down'></span>"+
+                    "NOME"+
+                "</center>"+
+            "</th>"+
+            "<th onclick='ordinamento(\"cognome\");'>"+
+                "<center>"+
+                    "<span class='glyphicon glyphicon-chevron-down'></span>"+
+                    "COGNOME"+
+                "</center>"+
+            "</th>"+
+            "<th onclick='ordinamento(\"email\");'>"+
+                "<center>"+
+                    "<span class='glyphicon glyphicon-chevron-down'></span>"+
+                    "EMAIL"+
+                "</center>"+
+            "</th>"+
+            "<th><center>AGGIORNA</center></th>"+
+            "<th><center>ELIMINA</center></th>"+
+            "</tr>"+
                 this.responseText;
         }
     };
