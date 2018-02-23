@@ -53,7 +53,7 @@ function selezione() {
             "<th onclick='ordinamento(\"Id\");'>"+
                 "<center>"+
                     "<span class='glyphicon glyphicon-chevron-down'></span>"+
-                    "ID"+
+                    "N°"+
                 "</center>"+
             "</th>"+
             "<th onclick='ordinamento(\"nome\");'>"+

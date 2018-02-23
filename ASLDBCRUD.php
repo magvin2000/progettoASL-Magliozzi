@@ -14,7 +14,7 @@
 <body onload="selezione()">
 <br>
 <div class="container">
-    <form method="get" onclick="aggiunta()" >
+    <form method="get" action="button_invia.php" >
         <button ='submit'  class="col-lg-12 btn btn-success" >
             <span class="glyphicon glyphicon-plus"></span>
                 Aggiungi

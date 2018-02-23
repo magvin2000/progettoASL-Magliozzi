@@ -40,7 +40,6 @@ if ($result->num_rows > 0) {
         </td>
         <td align = 'center'>
         <form action ='' method='get'>
-        <input type = 'hidden' name = 'Id' value = '$ID'>
         <button type = 'submit' class='btn btn-danger'>
         <span class = 'glyphicon glyphicon-trash'></span>
         Elimina
