@@ -6,103 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="javascript_funzioni.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="javascript_funzioni.js"></script>
     <title>DATABASE</title>
 </head>
-<body>
+<body onload="selezione()">
 <br>
 <div class="container">
-    <form method="get" action="button_invia.php">
-        <button ='submit' class="col-lg-12 btn btn-success" >
+    <form method="get" action="button_invia.php" >
+        <button ='submit'  class="col-lg-12 btn btn-success" >
             <span class="glyphicon glyphicon-plus"></span>
                 Aggiungi
         </button>
     </form>
     <br> <br> <br>
-    <table align = "center" id="tabella" class="table">
-        <tr>
-            <th onclick="ordinamento('Id');">
-                <center>
-                    <span class="glyphicon glyphicon-chevron-down"></span>
-                    N°
-                </center>
-            </th>
-            <th onclick="ordinamento('nome');">
-                <center>
-                    <span class="glyphicon glyphicon-chevron-down"></span>
-                    NOME
-                </center>
-            </th>
-            <th onclick="ordinamento('cognome');">
-                <center>
-                    <span class="glyphicon glyphicon-chevron-down"></span>
-                    COGNOME
-                </center>
-            </th>
-            <th onclick="ordinamento('email');">
-                <center>
-                    <span class="glyphicon glyphicon-chevron-down"></span>
-                    EMAIL
-                </center>
-            </th>
-            <th><center>AGGIORNA</center></th>
-            <th><center>ELIMINA</center></th>
-        </tr>
-<?php
-$servername = "localhost";
-$username = "root";
-$password="";
-$dbname="nuovo";
-$conn = new mysqli($servername, $username, $password,$dbname);
-
-$sql = "SELECT ID, NOME, COGNOME, EMAIL FROM dbasl";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        $ID=$row["ID"];
-        $nome = $row["NOME"];
-        $cognome = $row["COGNOME"];
-        $email = $row["EMAIL"];
-        echo ("<tr>
-        <td align = 'center'> " .
-        $row["ID"] .
-        "</td>
-        <td align = 'center'> " .
-        $row["NOME"] .
-        "</td>
-        <td align = 'center'> " .
-        $row["COGNOME"] .
-        "</td>
-        <td align = 'center'> " .
-        $row["EMAIL"] .
-        "</td> 
-        <td align = 'center'>
-        <form action ='button_aggiorna.php' method='get'>
-        <input type = 'hidden' name = 'nome' value = '$nome' >
-        <input type = 'hidden' name = 'cognome' value = '$cognome'> 
-        <input type = 'hidden' name = 'email' value = '$email'>
-        <input type = 'hidden' name = 'Id' value = '$ID'>
-        <button type = 'submit' class='btn btn-warning'>
-        <span class = 'glyphicon glyphicon-edit'></span>
-        Aggiorna
-        </button>
-        </form>
-        </td>
-        <td align = 'center'>
-        <form action ='button_elimina.php' method='get'>
-        <button type = 'submit' class='btn btn-danger'>
-        <span class = 'glyphicon glyphicon-trash'></span>
-        Elimina
-        </button>
-        </form>
-        </td>
-        </tr> ");
-    }
-}
-$conn->close();
-?>
+    <table align = "center" id="tabella"  class="table" >
 </table>
     <div class="input-group">
         <span class="input-group-addon" id="search-query"><span class="glyphicon glyphicon-search"></span></span>
