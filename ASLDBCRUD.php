@@ -15,19 +15,20 @@
 <br>
 
 <div class="container">
-    <form method="get" action="button_invia.php" >
-        <button ='submit'  class="col-lg-12 btn btn-success" >
+    <form method="get" action="" >
+        <button type='submit' onclick="agg()"   class="col-lg-12 btn btn-success" >
             <span class="glyphicon glyphicon-plus"></span>
                 Aggiungi
         </button>
     </form>
     <br> <br> <br>
     <table align = "center" id="tabella"  class="table" >
-</table>
+    </table>
     <div class="input-group">
         <span class="input-group-addon" id="search-query"><span class="glyphicon glyphicon-search"></span></span>
         <input type="text" class="form-control" placeholder="Cerca nella tabella" id="ricerca" onkeyup="ricerca();">
     </div>
 </div>
+<p id="cancella"></p>
 </body>
 </html>

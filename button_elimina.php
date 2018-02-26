@@ -8,11 +8,6 @@ $id = $_GET['Id'];
 $conn =  new mysqli($servername, $username, $password, $dbname);
 
 $sql = "DELETE FROM dbasl WHERE ID='$id'";
-if ($conn->query($sql) == TRUE) {
-    echo "Record deleted successfully";
-} else {
-    echo "Error deleting record: " . $conn->error;
-}
-
-header("Location: ASLDBCRUD.php");
+$conn->query($sql);
+//header usato in Dom
 $conn->close();

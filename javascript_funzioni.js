@@ -1,3 +1,7 @@
+//FATTO:
+//DOM:TUTTO
+//AJAX:AGGIUNGI E UPDATE
+//JQUERY:AGGIUNGI E UPDATE;
 function ricerca()
 {
     var ricerca = document.getElementById("ricerca").value;
@@ -38,14 +42,17 @@ function ordinamento(tipo)
     }
     tmp.sort();
 
-    for(var i=0;i<tmp.length;i++)
+    for( i=0;i<tmp.length;i++)
     {
         righe[i+1].innerHTML=tmp2[tmp[i][tmp[i].length-1]];
     }
 }
 
 function selezione() {
-    var xhttp = new XMLHttpRequest();
+
+    $("#tabella").load('select.php');
+
+    /*var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
             document.getElementById("tabella").innerHTML =
@@ -81,10 +88,12 @@ function selezione() {
         }
     };
     xhttp.open("GET", "select.php", true);
-    xhttp.send();
+    xhttp.send();*/
 }
 
-function agg(elemento,tipo,id){
+function agg(){
+    $().load("button_invia.php");
+    /*
     var nome="",cognome="",email="";
     appoggio=elemento.innerHTML;
     if(tipo==="Update"){
@@ -99,9 +108,12 @@ function agg(elemento,tipo,id){
     if(tipo==="Aggiungi")elemento.innerHTML+="<button class=\"btn btn-success glyphicon glyphicon-envelope\" onclick=\"Aggiungi(this.parentNode)\"> Invia</button>\n";
     else if(tipo==="Update")elemento.innerHTML+="<button class=\"btn btn-success glyphicon glyphicon-envelope\" onclick=\"Update(this.parentNode)\"> Invia</button>\n";
     elemento.innerHTML+="<button id='Annulla' class='btn btn-danger glyphicon glyphicon-remove' onclick='Annulla(this.parentNode)'> Annulla</button>";
+    */
 }
 
-function aggiunta(elemento) {
+function aggiunta() {
+
+    /*
     var xhttp = new XMLHttpRequest();
     var nome=elemento.getElementsByTagName('input')[0].value;
     var cognome=elemento.getElementsByTagName('input')[1].value;
@@ -117,25 +129,30 @@ function aggiunta(elemento) {
     };
     xhttp.open("GET", "Aggiungi.php?nome=" + nome + "&cognome=" + cognome + "&email=" + email, true);
     xhttp.send();
+    */
 }
 
 function aggiornamento() {
+
+    /*
     var xhttp = new XMLHttpRequest();
-    var nome=document.getElementsByTagName('input')[0].value;
-    var cognome=document.getElementsByTagName('input')[1].value;
-    var email=document.getElementsByTagName('input')[2].value;
-    var id=document.getElementsByTagName('input')[3].value;
+    var nome=document.getElementsByName('nome').value;
+    var cognome=document.getElementsByName('cognome').value;
+    var email=document.getElementsByName('email').value;
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
-            if(this.responseText!=="")  document.getElementsByTagName('input')[0].value=this.responseText;
+            if(this.responseText!=="")  document.getElementsByTagName('input')[3].value=this.responseText;
             else selezione();
         }
     };
-    xhttp.open("GET", "Update.php?nome=" + nome + "&cognome=" + cognome + "&email=" + email +"&Identificativo="+id, true);
+    xhttp.open("GET", "Update.php?Nome=" + nome + "&Cognome=" + cognome + "&Email=" + email +"&Id="+id, true);
     xhttp.send();
+    */
 }
 
 function eliminazione(Id){
+    $(cancella).load("button_elimina.php?Id="+Id,function(){selezione();})
+    /*
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
@@ -143,5 +160,5 @@ function eliminazione(Id){
         }
     };
     xhttp.open("GET", "button_elimina.php?Id="+Id, true);
-    xhttp.send();
+    xhttp.send();*/
 }
