@@ -132,7 +132,7 @@ function aggiunta() {
 }
 
 function aggiornamento() {
-    $("#inserisci").load('update.php');
+    $("#update").load('update.php');
     /*
     var xhttp = new XMLHttpRequest();
     var nome=document.getElementsByName('nome').value;

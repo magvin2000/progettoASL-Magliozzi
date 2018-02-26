@@ -29,5 +29,6 @@
 </div>
 <p id="cancella"></p>
 <p id="inserisci"></p>
+<p id="update"></p>
 </body>
 </html>
