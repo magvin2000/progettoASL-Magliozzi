@@ -1,7 +1,7 @@
 //FATTO:
 //DOM:TUTTO
 //AJAX:AGGIUNGI E UPDATE
-//JQUERY:AGGIUNGI E UPDATE;
+//JQUERY: UPDATE;
 function ricerca()
 {
     var ricerca = document.getElementById("ricerca").value;
@@ -112,7 +112,6 @@ function agg(){
 }
 
 function aggiunta() {
-
     /*
     var xhttp = new XMLHttpRequest();
     var nome=elemento.getElementsByTagName('input')[0].value;
@@ -133,7 +132,7 @@ function aggiunta() {
 }
 
 function aggiornamento() {
-
+    $("#inserisci").load('update.php');
     /*
     var xhttp = new XMLHttpRequest();
     var nome=document.getElementsByName('nome').value;
@@ -151,7 +150,7 @@ function aggiornamento() {
 }
 
 function eliminazione(Id){
-    $(cancella).load("button_elimina.php?Id="+Id,function(){selezione();})
+    $("#cancella").load("button_elimina.php?Id="+Id,function(){selezione();})
     /*
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
