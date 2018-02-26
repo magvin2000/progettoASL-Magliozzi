@@ -20,6 +20,6 @@ if (isset($_GET['nome']) && isset($_GET['cognome']) && isset($_GET['email'])) {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
     $conn->close();
-    //header("Location: ASLDBCRUD.php");//header usato in Dom
+    header("Location: ASLDBCRUD.php");//header usato in Dom
 }
     ?>

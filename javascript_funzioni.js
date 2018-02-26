@@ -92,7 +92,7 @@ function selezione() {
 }
 
 function agg(){
-    $().load("button_invia.php");
+    $("#inserisci").load("button_invia.php");
     /*
     var nome="",cognome="",email="";
     appoggio=elemento.innerHTML;

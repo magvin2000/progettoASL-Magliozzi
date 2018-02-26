@@ -15,12 +15,10 @@
 <br>
 
 <div class="container">
-    <form method="get" action="" >
-        <button type='submit' onclick="agg()"   class="col-lg-12 btn btn-success" >
+        <button type='button' onclick="agg()" class="col-lg-12 btn btn-success" >
             <span class="glyphicon glyphicon-plus"></span>
                 Aggiungi
         </button>
-    </form>
     <br> <br> <br>
     <table align = "center" id="tabella"  class="table" >
     </table>
@@ -30,5 +28,6 @@
     </div>
 </div>
 <p id="cancella"></p>
+<p id="inserisci"></p>
 </body>
 </html>
